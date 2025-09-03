@@ -41,10 +41,10 @@ namespace Ucu.Poo.Restaurant
                 return;
             }
 
-            table.AddDish(dish);
+            table.AddToOrder(dish);
             Console.WriteLine($"{Name} tomó el pedido: {dish.Name} para la mesa {table.Number}.");
         }
 
     }
 
-}§
+}

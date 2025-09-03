@@ -22,7 +22,7 @@ namespace Ucu.Poo.Restaurant
             return this.order.Count > 0;
         }
         
-        public void Occupy()
+        public void Ocupy()
         {
             this.IsOccupied = true;
         }

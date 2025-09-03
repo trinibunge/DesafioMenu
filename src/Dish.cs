@@ -17,15 +17,5 @@ namespace Ucu.Poo.Restaurant
         }
     }
 }
-    }
 
-    public class Price
-    {
-        public float Cost { get; }
 
-        public Price(float cost)
-        {
-            Cost = cost;
-        }
-    }
-}

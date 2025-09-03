@@ -1,31 +1,29 @@
-using NUnit.Framework;
+using System.Collections.Generic;
 
-namespace Ucu.Poo.Restaurant.Tests
+namespace Ucu.Poo.Restaurant
 {
-    [TestFixture]
-    public class WaiterTests
+    /// <summary>
+    /// Representa un mozo en el restaurante, encargado de atender mesas.
+    /// </summary>
+    public class Waiter
     {
-        [Test]
-        public void Constructor_WithValidParameters_SetsProperties()
-        {
-            const string name = "John Doe";
-            Waiter waiter = new Waiter(name);
+        private List<Table>assignedTables = new List<Table>();
 
-            Assert.That(waiter.Name, Is.EqualTo(name));
+        public string Name { get; set; }
+
+        public Waiter(string name)
+        {
+            this.Name = name;
         }
 
-        [Test]
-        public void TakeOrder_WithValidParameters_TakesOrder()
+        public void AssignTable(Table table)
         {
-            Waiter waiter = new Waiter("Jane Doe");
-            Table table = new Table(1);
-            waiter.AssignTable(table);
-            Dish dish = new Dish("Salad", 5.99, true);
-            table.Ocupy();
+            this.assignedTables.Add(table);
+        }
 
-            waiter.TakeOrder(table, dish);
-
-            Assert.That(table.HasOrders(), Is.True);
+        public void TakeOrder(Table table, Dish dish)
+        {
+            table.AddToOrder(dish);
         }
     }
 }

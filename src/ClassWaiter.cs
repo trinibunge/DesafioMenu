@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Ucu.Poo.Restaurant
 {
+    /*
     public class Waiter
     {
         public string Name { get; set; }
@@ -18,5 +19,5 @@ namespace Ucu.Poo.Restaurant
             Name = name;
         }
 
-    }
+    }*/
 }
